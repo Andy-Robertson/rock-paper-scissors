@@ -8,73 +8,36 @@
 </head>
 
 <body>
-    <script>
-        let playerScore = 0;
-        let computerScore = 0;
-        let playerMove;
-        let computerMove;
 
-        // randomly selects the computers move
-        function computerPlay() {
 
-            let choices = ["rock", "paper", "scissors"];
-            let index = [Math.floor(Math.random() * 3)];
 
-            return computerMove = choices[index];
-        }
 
-        // plays one round of the game
-        function playRound(playerSelection, computerSelection) {
+    <button id="btn1">ROCK</button>
+    <button id="btn2">PAPER</button>
+    <button id="btn3">SCISSORS</button>
 
-            computerSelection = computerMove;
-            playerSelection = playerMove;
+    <div>My Score: </div>
+    <div id="compScore"></div>
 
-            if (playerSelection == "scissors" && computerSelection == "paper" || playerSelection
-                .toLowerCase() ==
-                "paper" && computerSelection == "rock" || playerSelection == "rock" &&
-                computerSelection == "scissors") {
+    <div>Your Score:</div>
+    <div id="playScore"></div>
 
-                playerScore++;
-                return `You win this round! As ${playerSelection} beats ${computerSelection}, so you're on [${playerScore}] and I'm on [${computerScore}].`;
 
-            } else if (computerSelection == "scissors" && playerSelection == "paper" ||
-                computerSelection == "paper" && playerSelection == "rock" || computerSelection ==
-                "rock" && playerSelection == "scissors") {
+    <div id="roundResult"></div>
 
-                computerScore++;
-                return `I won that round! As ${computerSelection} beats ${playerSelection}, so you're on [${playerScore}] and I'm on [${computerScore}].`;
+    <div id="winner"></div>
 
-            } else if (computerSelection == playerSelection) {
 
-                return `It's a draw! We both drew ${computerSelection} so the scores stay the same at [${playerScore}] and [${computerScore}].`;
 
-            } else {
 
-                return `${playerSelection} isn't a move!.`;
-            }
 
-        }
 
-        // starts the game, plays 5 rounds, reports who won each round and score, reports total score after 5 rounds
-        function game() {
 
-            for (let i = 0; i < 5; i++) {
-                playerMove = window.prompt("Rock, paper, or scissors?").toLowerCase();
-                computerMove = computerPlay();
-                console.log(playRound());
-            }
 
-            if (playerScore > computerScore) {
 
-                return `At the end of five rounds you scored [${playerScore}], I scored [${computerScore}], YOU WIN!`;
 
-            } else {
 
-                return `At the end of five rounds you scored [${playerScore}], I scored [${computerScore}], I WIN!`;
-
-            }
-        }
-    </script>
+    <script src="rpslogic.js"></script>
 </body>
 
 </html>
