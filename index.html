@@ -5,39 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+    <h1>Rock, Paper, Scissors</h1>
+    <div id="scoresContainer">
+        <div id="hScore">
+            <div>My Score:</div>
+            <div id="playScore">0</div>
+        </div>
+        <div id="cScore">
+            <div>Your Score: </div>
+            <div id="compScore">0</div>
+        </div>
+    </div>
+    <div id="result">SELECT A MOVE TO START</div>
+    <div id="gameButtonContainer">
+        <button id="btn1">ROCK</button>
+        <button id="btn2">PAPER</button>
+        <button id="btn3">SCISSORS</button>
+    </div>
 
-
-
-
-    <button id="btn1">ROCK</button>
-    <button id="btn2">PAPER</button>
-    <button id="btn3">SCISSORS</button>
-
-    <div>My Score: </div>
-    <div id="compScore"></div>
-
-    <div>Your Score:</div>
-    <div id="playScore"></div>
-
-
-    <div id="roundResult"></div>
-
-    <div id="winner"></div>
-
-
-
-
-
-
-
-
-
-
+    <div id="instructions">Instructions will go here</div>
 
     <script src="rpslogic.js"></script>
+
 </body>
 
 </html>

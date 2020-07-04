@@ -1,0 +1,56 @@
+h1 {
+
+    display: flex;
+    color: brown;
+    justify-content: center;
+
+}
+
+h3 {
+    color: gold;
+
+}
+
+#hScore {
+
+    display: flex;
+    padding-right: 2rem;
+
+}
+
+#cScore {
+
+    display: flex;
+    padding-left: 2rem;
+
+}
+
+#scoresContainer {
+
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+
+
+}
+
+#gameButtonContainer {
+
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+
+}
+
+#result {
+
+    padding: 5rem;
+    display: flex;
+    justify-content: center
+}
+
+#instructions {
+
+    display: flex;
+    justify-content: center
+}
