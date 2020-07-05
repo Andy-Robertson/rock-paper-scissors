@@ -11,23 +11,32 @@
 <body>
     <h1>Rock, Paper, Scissors</h1>
     <div id="scoresContainer">
-        <div id="hScore">
-            <div>My Score:</div>
-            <div id="playScore">0</div>
+
+        <div id="pScore">
+            <div class="scoresTitle">Player Score</div>
+            <div id="playScore" class="score">0</div>
         </div>
+
         <div id="cScore">
-            <div>Your Score: </div>
-            <div id="compScore">0</div>
+            <div class="scoresTitle">CPU Score</div>
+            <div id="compScore" class="score">0</div>
         </div>
+
     </div>
+
+    <div id="movesContainer">
+        <div id="playMove">-</div>
+        <div id="vs">Vs</div>
+        <div id="compMove">-</div>
+    </div>
+
     <div id="result">SELECT A MOVE TO START</div>
     <div id="gameButtonContainer">
         <button id="btn1">ROCK</button>
         <button id="btn2">PAPER</button>
         <button id="btn3">SCISSORS</button>
+        <button id="btn4">RESET</button>
     </div>
-
-    <div id="instructions">Instructions will go here</div>
 
     <script src="rpslogic.js"></script>
 
