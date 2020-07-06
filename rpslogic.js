@@ -18,9 +18,48 @@ function reset() {
     playerMove = "-";
     computerMove = "-";
     winner = "SELECT A MOVE TO START";
+    addMoveButtons();
 }
 
-// plays one winner of the game
+const gameButtonContainer = document.querySelector('#gameButtonContainer');
+
+const btn1 = document.createElement('button');
+btn1.classList.add('btn1');
+btn1.textContent = "ROCK";
+gameButtonContainer.appendChild(btn1)
+
+
+const btn2 = document.createElement('button');
+btn2.classList.add('btn2');
+btn2.textContent = "PAPER";
+gameButtonContainer.appendChild(btn2)
+
+
+const btn3 = document.createElement('button');
+btn3.classList.add('btn3');
+btn3.textContent = "SCISSORS";
+gameButtonContainer.appendChild(btn3)
+
+const btn4 = document.createElement('button');
+btn4.classList.add('btn4');
+btn4.textContent = "RESET";
+gameButtonContainer.appendChild(btn4);
+
+function addMoveButtons() {
+    gameButtonContainer.appendChild(btn1);
+    gameButtonContainer.appendChild(btn2);
+    gameButtonContainer.appendChild(btn3);
+    gameButtonContainer.removeChild(btn4);
+}
+
+function removeMoveButtons() {
+    gameButtonContainer.removeChild(btn1);
+    gameButtonContainer.removeChild(btn2);
+    gameButtonContainer.removeChild(btn3);
+    gameButtonContainer.appendChild(btn4);
+}
+
+// plays one round of the game
 function playRound(playerSelection, computerSelection) {
 
     computerSelection = computerMove;
@@ -36,7 +75,7 @@ function playRound(playerSelection, computerSelection) {
         if (playerScore > computerScore && playerScore == 5) {
 
             winner = `YOU WIN THE MATCH!`;
-
+            removeMoveButtons();
         } else {
 
             winner = `You WIN this round, ${playerSelection} beats ${computerSelection}!`;
@@ -52,7 +91,7 @@ function playRound(playerSelection, computerSelection) {
         if (computerScore > playerScore && computerScore == 5) {
 
             winner = `YOU LOSE THE MATCH! GAME OVER!`;
-
+            removeMoveButtons();
         } else {
 
             winner = `I WON that round, ${computerSelection} beats ${playerSelection}!`;
@@ -65,7 +104,8 @@ function playRound(playerSelection, computerSelection) {
 
         if (playerScore > computerScore && playerScore == 5) {
 
-            winner = `YOU WIN THE MATCH!`
+            winner = `YOU WIN THE MATCH!`;
+            removeMoveButtons();
 
         } else {
 
@@ -77,7 +117,7 @@ function playRound(playerSelection, computerSelection) {
         if (computerScore > playerScore && computerScore == 5) {
 
             winner = `YOU LOSE THE MATCH! GAME OVER`;
-
+            removeMoveButtons();
         } else {
 
             winner = `PLAY AGAIN, ${playerSelection} isn't a move!`;
@@ -87,27 +127,25 @@ function playRound(playerSelection, computerSelection) {
     return winner;
 }
 
-
-
 const buttons = document.querySelectorAll('button'); // buttons is node list(array like)
 
 buttons.forEach((button) => { // iterate through each button
 
     button.addEventListener('click', () => { // for each button adds a click listener
 
-        if (button.id == "btn1") {
+        if (button.classList == "btn1") {
 
             playerMove = "rock";
             computerMove = computerPlay();
             playRound();
 
-        } else if (button.id == "btn2") {
+        } else if (button.classList == "btn2") {
 
             playerMove = "paper";
             computerMove = computerPlay();
             playRound();
 
-        } else if (button.id == "btn3") {
+        } else if (button.classList == "btn3") {
 
             playerMove = "scissors";
             computerMove = computerPlay();
@@ -118,8 +156,6 @@ buttons.forEach((button) => { // iterate through each button
             reset();
 
         }
-
-
 
         const result = document.querySelector('#result');
         result.classList.add('result');
@@ -140,8 +176,6 @@ buttons.forEach((button) => { // iterate through each button
         const playMove = document.querySelector('#playMove');
         playMove.classList.add('playMove');
         playMove.textContent = playerMove;
-
-
 
     });
 
