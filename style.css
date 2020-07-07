@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
 :root {
-    font-family: 'Kanit', sans-serif;
+
+    font-family: 'Cairo', sans-serif;
     font-size: 1rem;
     background: #def2f1
 }
@@ -39,7 +40,7 @@ h1 {
 
 .score {
     font-size: 3rem;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 #scoresContainer {
@@ -47,7 +48,7 @@ h1 {
     justify-content: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background: ;
+
 }
 
 #gameButtonContainer {
@@ -74,7 +75,7 @@ h1 {
     align-items: center;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-    background: ;
+
 }
 
 #playMove {
@@ -101,39 +102,44 @@ h1 {
     padding-left: 2.1rem;
     padding-right: 2.1rem;
     font-size: 2rem;
+    font-weight: 400;
 }
 
 #result {
-    background: ;
+
     font-size: 1.5rem;
 }
 
-#gameButtonContainer {
-    background: ;
-}
+#gameButtonContainer {}
 
 .btn1,
 .btn2,
 .btn3 {
+    display: flex;
+    justify-content: center;
     color: white;
+    font-weight: 600;
     background: radial-gradient(circle,
             rgb(10, 112, 180) 0%,
             rgba(9, 23, 226, 0.712) 100%);
     border: 0;
     border-radius: 0.3rem;
     padding: 1rem;
-    width: 5.05rem;
+    width: 5.03rem;
     margin: 0.4rem;
 }
 
 .btn4 {
     color: white;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
     background: radial-gradient(circle,
             rgb(253, 1, 1) 0%,
             rgba(226, 9, 9, 0.712) 100%);
     border: 0;
     border-radius: 0.3rem;
     padding: 1rem;
-    width: 6rem;
-    margin: 1rem;
+    width: 8rem;
+    margin: 0.4rem;
 }

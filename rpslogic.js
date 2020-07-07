@@ -1,3 +1,4 @@
+// 
 let playerScore = 0;
 let computerScore = 0;
 
@@ -42,8 +43,10 @@ gameButtonContainer.appendChild(btn3)
 
 const btn4 = document.createElement('button');
 btn4.classList.add('btn4');
-btn4.textContent = "RESET";
+btn4.textContent = "PLAY AGAIN";
 gameButtonContainer.appendChild(btn4);
+
+
 
 function addMoveButtons() {
     gameButtonContainer.appendChild(btn1);
@@ -65,65 +68,41 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = computerMove;
     playerSelection = playerMove;
 
-    if (playerSelection == "scissors" && computerSelection == "paper" || playerSelection
-        .toLowerCase() ==
-        "paper" && computerSelection == "rock" || playerSelection == "rock" &&
-        computerSelection == "scissors" || computerSelection !== playerSelection) {
+    if (playerSelection == "scissors" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "rock" && computerSelection == "scissors") {
 
         playerScore++;
 
-        if (playerScore > computerScore && playerScore == 5) {
+        if (playerScore == 5) {
 
-            winner = `YOU WIN THE MATCH!`;
+            winner = `YOU WIN THE MATCH! GAME OVER!`;
             removeMoveButtons();
+
         } else {
 
-            winner = `You WIN this round, ${playerSelection} beats ${computerSelection}!`;
+            winner = `You WIN! ${playerSelection} beats ${computerSelection}!`;
 
         }
 
-    } else if (computerSelection == "scissors" && playerSelection == "paper" || computerSelection ==
-        "paper" && playerSelection == "rock" || computerSelection == "rock" && playerSelection ==
-        "scissors" || computerSelection !== playerSelection) {
+    } else if (computerSelection == "scissors" && playerSelection == "paper" || computerSelection == "paper" && playerSelection == "rock" || computerSelection == "rock" && playerSelection == "scissors") {
 
         computerScore++;
 
-        if (computerScore > playerScore && computerScore == 5) {
+        if (computerScore == 5) {
 
-            winner = `YOU LOSE THE MATCH! GAME OVER!`;
-            removeMoveButtons();
-        } else {
-
-            winner = `I WON that round, ${computerSelection} beats ${playerSelection}!`;
-
-        }
-    } else if (computerSelection == playerSelection) {
-
-        computerScore++;
-        playerScore++;
-
-        if (playerScore > computerScore && playerScore == 5) {
-
-            winner = `YOU WIN THE MATCH!`;
+            winner = `CPU WINS THE MATCH! GAME OVER!`;
             removeMoveButtons();
 
         } else {
 
-            winner = `It's a DRAW, we both drew ${computerSelection}!`;
+            winner = `CPU WINS! ${computerSelection} beats ${playerSelection}`;
 
         }
     } else {
 
-        if (computerScore > playerScore && computerScore == 5) {
+        winner = `It's a DRAW! we both drew ${computerSelection}`;
 
-            winner = `YOU LOSE THE MATCH! GAME OVER`;
-            removeMoveButtons();
-        } else {
-
-            winner = `PLAY AGAIN, ${playerSelection} isn't a move!`;
-
-        }
     }
+
     return winner;
 }
 
@@ -136,19 +115,19 @@ buttons.forEach((button) => { // iterate through each button
         if (button.classList == "btn1") {
 
             playerMove = "rock";
-            computerMove = computerPlay();
+            computerPlay();
             playRound();
 
         } else if (button.classList == "btn2") {
 
             playerMove = "paper";
-            computerMove = computerPlay();
+            computerPlay();
             playRound();
 
         } else if (button.classList == "btn3") {
 
             playerMove = "scissors";
-            computerMove = computerPlay();
+            computerPlay();
             playRound();
 
         } else {
@@ -179,4 +158,10 @@ buttons.forEach((button) => { // iterate through each button
 
     });
 
+
+
+
 });
+
+// Hides reset button after DOM is loaded
+gameButtonContainer.removeChild(btn4)
