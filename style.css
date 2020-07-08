@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
-:root {
-
+* {
     font-family: 'Cairo', sans-serif;
     font-size: 1rem;
-    background: #def2f1
+    background: #c2e7e5;
 }
 
 h1 {
@@ -33,7 +32,7 @@ h1 {
     width: 7rem;
     margin-left: 1rem;
     border: 0.2rem ridge;
-    border-color: red;
+    border-color: #FF0000;
     align-items: center;
     border-radius: 0.5rem;
 }
@@ -48,23 +47,16 @@ h1 {
     justify-content: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
-
 }
 
 #gameButtonContainer {
     display: flex;
     justify-content: center;
-    padding-bottom: 2rem;
 }
 
 #result {
-    padding-top: 5rem;
+    padding-top: 1rem;
     padding-bottom: 1rem;
-    display: flex;
-    justify-content: center
-}
-
-#instructions {
     display: flex;
     justify-content: center
 }
@@ -75,7 +67,6 @@ h1 {
     align-items: center;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
-
 }
 
 #playMove {
@@ -92,7 +83,7 @@ h1 {
     justify-content: center;
     width: 5rem;
     border: 0.15rem solid;
-    border-color: red;
+    border-color: #FF0000;
     border-radius: 0.3rem;
 }
 
@@ -106,18 +97,15 @@ h1 {
 }
 
 #result {
-
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
-
-#gameButtonContainer {}
 
 .btn1,
 .btn2,
 .btn3 {
     display: flex;
     justify-content: center;
-    color: white;
+    color: #FFFFFF;
     font-weight: 600;
     background: radial-gradient(circle,
             rgb(10, 112, 180) 0%,
@@ -130,7 +118,7 @@ h1 {
 }
 
 .btn4 {
-    color: white;
+    color: #FFFFFF;
     display: flex;
     justify-content: center;
     font-weight: 600;
@@ -142,4 +130,10 @@ h1 {
     padding: 1rem;
     width: 8rem;
     margin: 0.4rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(9, 23, 226, 0.712);
+    transition: 0.8s ease-in-out;
 }

@@ -1,8 +1,8 @@
-// 
+// global scope variables
 let playerScore = 0;
 let computerScore = 0;
 
-// randomly selects the computers move
+// randomly selects the computers move, called by button eventListener
 function computerPlay() {
 
     let choices = ["rock", "paper", "scissors"];
@@ -11,7 +11,7 @@ function computerPlay() {
     return computerMove = choices[index];
 }
 
-//resets game
+//resets game, called by eventListener
 function reset() {
 
     playerScore = 0;
@@ -29,12 +29,10 @@ btn1.classList.add('btn1');
 btn1.textContent = "ROCK";
 gameButtonContainer.appendChild(btn1)
 
-
 const btn2 = document.createElement('button');
 btn2.classList.add('btn2');
 btn2.textContent = "PAPER";
 gameButtonContainer.appendChild(btn2)
-
 
 const btn3 = document.createElement('button');
 btn3.classList.add('btn3');
@@ -46,15 +44,15 @@ btn4.classList.add('btn4');
 btn4.textContent = "PLAY AGAIN";
 gameButtonContainer.appendChild(btn4);
 
-
-
+//adds rock, paper, scissors buttons to the DOM and removes reset button, called by playRound()
 function addMoveButtons() {
-    gameButtonContainer.appendChild(btn1);
-    gameButtonContainer.appendChild(btn2);
-    gameButtonContainer.appendChild(btn3);
-    gameButtonContainer.removeChild(btn4);
+    gameButtonContainer.appendChild(btn1); //rock
+    gameButtonContainer.appendChild(btn2); //paper
+    gameButtonContainer.appendChild(btn3); //scissors
+    gameButtonContainer.removeChild(btn4); //reset
 }
 
+//adds reset button to the DOM and removes rock, paper, scissors buttons, called by playRound()
 function removeMoveButtons() {
     gameButtonContainer.removeChild(btn1);
     gameButtonContainer.removeChild(btn2);
@@ -62,7 +60,7 @@ function removeMoveButtons() {
     gameButtonContainer.appendChild(btn4);
 }
 
-// plays one round of the game
+// plays one round of the game, called by button eventListener
 function playRound(playerSelection, computerSelection) {
 
     computerSelection = computerMove;
@@ -74,7 +72,7 @@ function playRound(playerSelection, computerSelection) {
 
         if (playerScore == 5) {
 
-            winner = `YOU WIN THE MATCH! GAME OVER!`;
+            winner = `YOU WIN THE MATCH!`;
             removeMoveButtons();
 
         } else {
@@ -89,7 +87,7 @@ function playRound(playerSelection, computerSelection) {
 
         if (computerScore == 5) {
 
-            winner = `CPU WINS THE MATCH! GAME OVER!`;
+            winner = `CPU WINS THE MATCH!`;
             removeMoveButtons();
 
         } else {
@@ -104,13 +102,16 @@ function playRound(playerSelection, computerSelection) {
     }
 
     return winner;
+
 }
 
-const buttons = document.querySelectorAll('button'); // buttons is node list(array like)
+// declares buttons as node list
+const buttons = document.querySelectorAll('button');
 
-buttons.forEach((button) => { // iterate through each button
+// iterates through each button
+buttons.forEach((button) => {
 
-    button.addEventListener('click', () => { // for each button adds a click listener
+    button.addEventListener('click', () => {
 
         if (button.classList == "btn1") {
 
@@ -157,9 +158,6 @@ buttons.forEach((button) => { // iterate through each button
         playMove.textContent = playerMove;
 
     });
-
-
-
 
 });
 
